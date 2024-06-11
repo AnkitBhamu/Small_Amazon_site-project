@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./todo_list.css">
+</head>
+<body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 30px;font-weight: bold;">To do List</h1>
+    <div class="grid_layout">
+        <input class="name" type="text" name="" placeholder="Todo name" id="">
+        <input class="date" type="date" name="" placeholder="yyyy-mm-dd" id="">
+        <button class="add_btn"  onclick="addtoList()">Add</button>
+    </div>
+    <div id="display_grids" class="grid_layout" style="margin-top: 10px;">
+    </div>
+    
+    <script>
+        let todolist = []
+
+        function display_todo()
+        {
+            console.log("to do lenght is : ",todolist.length)
+            let display_element = document.getElementById('display_grids');
+            let html = "";
+            for(var i =0 ; i < todolist.length;i++)
+            {
+                const temp = `
+                <div class =row><p class = "col">${todolist[i].name}</p></div><div class = row><p class = "col">${todolist[i].date}</p></div><button class = del_btn onclick = "todolist.splice(${i},1); display_todo();">Delete</button>
+                `
+                html+=temp
+            }
+            display_element.innerHTML = html
+        }
+
+        function addtoList()
+        {
+            let ele = document.querySelector('.name');
+            let ele2 = document.querySelector('.date');
+            let data = {
+                name : "",
+                date : ""
+            };
+            if(ele.value && ele2.value)
+            {
+                if(!todolist.includes({name : ele.value,date : ele2.value}))
+                    { console.log("hello there")
+                      data.name = ele.value;
+                      data.date = ele2.value;
+                      todolist.push(data);
+                    }
+            }
+            display_todo()
+
+            console.log(todolist)
+        }
+
+    </script>
+</body>
+</html>

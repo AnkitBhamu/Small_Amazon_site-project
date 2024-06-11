@@ -1,0 +1,94 @@
+.ans_display
+{
+    height: 70px;
+    margin-bottom: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    overflow-x: scroll;
+
+}
+
+.main_cont
+{
+    /* display: flex; */
+    justify-content: center;
+}
+
+.title
+{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.cal_body
+{
+    width : 300px;
+    /* height: 450px; */
+    background-color: black;
+    margin-top: 50px;
+}
+
+.buttons
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background-color: grey;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 5px;
+    margin-left: 5px;
+
+
+
+}
+.cal_rows
+{
+    margin-top: 10px;
+}
+.button_value
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ans_display::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media only screen and (max-width: 481px) {
+    .title
+    {
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: white;
+        text-overflow: ellipsis;
+        padding-left: auto;
+        padding-right: auto;
+    }
+  }
+   
+   
+  /* // for tablet view */
+  @media only screen and (max-width: 769px) {
+  }
+   
+   
+  /* // for laptop view */
+  @media only screen and (max-width: 1026px) {
+
+  }

@@ -1,0 +1,42 @@
+.add_btn
+{
+    height: 50px;
+    width: 150px;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+}
+
+.del_btn
+{
+    height: 50px;
+    width: 150px;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.row
+{
+    overflow-x: scroll;
+}
+.name , .date
+{
+    margin-right: 10px;
+}
+
+.grid_layout
+{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    row-gap: 10px;
+    column-gap: 10px;
+
+}
+
+.row::-webkit-scrollbar
+{
+    display: none;
+}
+

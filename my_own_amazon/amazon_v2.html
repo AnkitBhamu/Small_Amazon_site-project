@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon</title>
+  <link rel="stylesheet" href="./styles_v2/amazon_new.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="left">
+      <a href="./amazon_v2.html">
+        <img class="logo" src="./images/amazon-logo-white.png" alt="">
+        <img class="logo2" src="./images/amazon-mobile-logo-white.png" alt="">
+      </a>
+    </div>
+    <div class="middle">
+      <input type="text" class="search_bar" placeholder="search"></input>
+      <button class="search_button">
+        <img src="./images/icons/search-icon.png" alt="" class="search_icon">
+      </button>
+    </div>
+    <div class="right">
+      <div class="returns_orders">
+        <span class="text1">Returns
+        </span>
+        <span class="text2">& Orders
+        </span>
+      </div>
+      <a href="./checkout_v2.html" class="cart_details">
+        <img class="cart_icon" src="./images/icons/cart-icon.png" alt="">
+        <span class="cart_quantity">0</span>
+        <span class="cart_text">Cart</span>
+      </a>
+    </div>
+  </div>
+  <div class="products_grid">
+    <!-- Data will be rendered by js -->
+    </div>
+</body>
+<script type="module" src="./scripts_v2/render_products.js"></script>
+</html>

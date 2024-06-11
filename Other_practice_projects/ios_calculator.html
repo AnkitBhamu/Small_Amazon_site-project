@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./calc.css">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black;">
+    <div><span class="title">A Simple Calculator</span></div>
+
+    <div class="main_cont">
+        <div class="ans_display">0</div>
+        <div class="cal_body">
+            <div class="cal_rows">
+                <span class="buttons" onclick="handle_value('1')">
+                    <p class="button_value">1</p>
+                </span>
+                <span class="buttons" onclick="handle_value('2')">
+                    <p class="button_value">2</p>
+                </span>
+                <span class="buttons" onclick="handle_value('3')">
+                    <p class="button_value">3</p>
+                </span>
+                <span class="buttons" onclick="handle_opcode('+')" background-color:greenyellow">
+                    <p class="button_value">+</p>
+                </span>
+            </div>
+            <div class="cal_rows">
+                <span class="buttons" onclick="handle_value('4')">
+                    <p class="button_value">4</p>
+                </span>
+                <span class="buttons" onclick="handle_value('5')">
+                    <p class="button_value">5</p>
+                </span>
+                <span class="buttons" onclick="handle_value('6')">
+                    <p class="button_value">6</p>
+                </span>
+                <span class="buttons" onclick="handle_opcode('-')" style="background-color:greenyellow">
+                    <p class="button_value">-</p>
+                </span>
+            </div>
+            <div class="cal_rows">
+                <span class="buttons" onclick="handle_value('7')">
+                    <p class="button_value">7</p>
+                </span>
+                <span class="buttons" onclick="handle_value('8')">
+                    <p class="button_value">8</p>
+                </span>
+                <span class="buttons" onclick="handle_value('9')">
+                    <p class="button_value">9</p>
+                </span>
+                <span class="buttons" onclick="handle_opcode('*')" style="background-color:greenyellow">
+                    <p class="button_value">*</p>
+                </span>
+            </div>
+            <div class="cal_rows">
+                <span class="buttons" onclick="handle_value('0')">
+                    <p class="button_value">0</p>
+                </span>
+                <span class="buttons" onclick="handle_value('.')">
+                    <p class="button_value">.</p>
+                </span>
+                <span class="buttons" onclick="handle_opcode('=')">
+                    <p class="button_value">=</p>
+                </span>
+                <span class="buttons" onclick="handle_opcode('/')" style="background-color:greenyellow">
+                    <p class="button_value">/</p>
+                </span>
+            </div>
+            <div class="cal_rows">
+                <span class="buttons" onclick="handle_opcode('clear')">
+                    <p class="button_value" style="font-size: 20px;font-weight: normal;">Clear</p>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let non_parsed_string = ''
+        function handle_opcode(opcode) {
+            let ele = document.getElementsByClassName('ans_display')[0]
+            if (opcode === 'clear') {
+                non_parsed_string = ''
+                ele.innerHTML = 0
+                return
+            }
+
+            if (opcode === '=') {
+                try {
+                    let res = eval(non_parsed_string);
+                    console.log(res)
+                    ele.innerHTML = res
+
+                }
+                catch (error) {
+                    ele.innerHTML = non_parsed_string
+                }
+            }
+
+            else {
+                non_parsed_string += opcode
+                ele.innerHTML = non_parsed_string
+            }
+        }
+
+        function handle_value(value) {
+            non_parsed_string += value
+            let ele = document.getElementsByClassName('ans_display')[0]
+            ele.innerHTML = non_parsed_string
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!-- small cart example -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button>Show quantity</button>
+        <button onclick="add_items('add')">Add to cart</button>
+        <button onclick="add_items('remove')">remove from cart</button>
+        <button>Reset cart</button>
+    </div>
+
+    <script>
+        let total_items = 0
+        function add_items(type)
+        {
+            if(type == 'add') {total_items+=1}
+            if(type == 'remove') {total_items-=1}
+            console.log(total_items)
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- rock paper scissor game -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="handle_game('rock')">Rock</button>
+        <button onclick="handle_game('paper')">Paper</button>
+        <button onclick="handle_game('scissor')">Scissor</button>
+        <button onclick="handle_game('Reset')">Reset</button>
+        <span id="wins">Total_wins : 0</span>
+        <span id="loss">Total_losses : 0</span>
+    </div>
+
+    <script>
+        let total_wins = 0
+        let total_losses = 0
+        function handle_game(user_selection) {
+            if (user_selection == 'Reset') {
+                total_losses = 0
+                total_wins = 0
+                let element1 = document.getElementById('wins')
+                let element2 = document.getElementById('loss')
+                element1.innerHTML = 'Total_wins : ' + total_wins
+                element2.innerHTML = 'Total_losses : ' + total_losses
+                return
+            }
+            let cmove = Math.random()
+            if (cmove <= 1 / 3) { cmove = 'rock' }
+            if (cmove > 1 / 3 && cmove < 2 / 3) { cmove = 'paper' }
+            if (cmove >= 2 / 3) { cmove = 'scissor' }
+
+            console.log("cmove is ;", cmove, " user move is : ", user_selection)
+
+            if (cmove == 'rock' && user_selection != cmove) {
+                alert("You loose as you chose " + user_selection + " and computer chose " + cmove)
+                total_losses++
+            }
+            if (cmove == 'scissor' && user_selection == 'paper') {
+                alert("You loose as you chose " + user_selection + " and computer chose " + cmove)
+                total_losses++
+            }
+            else if (user_selection == cmove) alert("You tie as you chose " + user_selection + " and computer chose " + cmove)
+            else if (user_selection != cmove && user_selection == 'rock') {
+                alert("You win as you chose " + user_selection + " and computer chose " + cmove)
+                total_wins++
+            }
+            else if (cmove == 'paper' && user_selection == 'scissor') {
+                alert("You win as you chose " + user_selection + " and computer chose " + cmove)
+                total_wins++
+            }
+
+            let element1 = document.getElementById('wins')
+            let element2 = document.getElementById('loss')
+            element1.innerHTML = 'Total_wins : ' + total_wins
+            element2.innerHTML = 'Total_losses : ' + total_losses
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!-- Updating the DOM which is Document object built in JS or broowser engine-->
+<!-- a small subscribe button -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="document.querySelector('button').innerHTML = document.querySelector('button').innerHTML=='Subscribe'?'Subscibed':'Subscribe'">Subscibe</button>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .yt_button
+        {
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+
+        } 
+    </style>
+
+
+</head>
+<body>
+    <p>Youtube subscribe button!</p>
+    <button class="yt_button" onclick="document.querySelector('button').innerHTML = document.querySelector('button').innerHTML=='Subscribe'?'Subscribed':'Subscribe'">Subscibe</button>
+    <div class="container">
+        <input type="text">
+        <button onclick="handle_amount()">Calculate</button>
+    </div>
+
+</body>
+
+<script>
+    function handle_amount()
+    {
+        let ele = document.querySelector('input')
+        let entered_value = ele.value
+        console.log("user_entered "+entered_value + " amount in the calculator")
+    }
+</script>
+</html>
+
